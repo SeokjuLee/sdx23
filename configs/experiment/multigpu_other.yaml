@@ -1,0 +1,23 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=example_simple.yaml
+
+defaults:
+  - multigpu_default
+  - override /model: ConvTDFNet_other.yaml
+
+seed: 2021
+
+logger:
+  wandb:
+    name: 'mdx_other_Bval5'
+
+trainer:
+  gpus: '0,1'
+
+datamodule:
+  batch_size: 8
+  num_workers: 8
+  pin_memory: False
+  overlap: 4096

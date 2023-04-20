@@ -1,0 +1,23 @@
+_target_: src.models.mdxnet.Mixer
+
+target_name: 'all'
+
+separator_configs:
+  vocals: ${work_dir}/configs/model/ConvTDFNet_vocals.yaml
+  drums: ${work_dir}/configs/model/ConvTDFNet_drums.yaml
+  bass: ${work_dir}/configs/model/ConvTDFNet_bass.yaml
+  other: ${work_dir}/configs/model/ConvTDFNet_other.yaml
+
+separator_ckpts:
+  vocals: null
+  drums: null
+  bass: null
+  other: null
+
+dim_t: 256
+hop_length: 1024
+overlap: 8192
+
+# optimizer
+lr: 0.003
+optimizer: rmsprop
